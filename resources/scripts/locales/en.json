@@ -330,7 +330,10 @@
     "item": {
       "title": "Item Title",
       "description": "Description",
+      "width": "Width",
+      "length": "Length",
       "quantity": "Quantity",
+      "area": "Area",
       "price": "Price",
       "discount": "Discount",
       "total": "Total",
@@ -410,7 +413,10 @@
     "item": {
       "title": "Item Title",
       "description": "Description",
+      "width": "Width",
+      "length": "Length",
       "quantity": "Quantity",
+      "area": "Area",
       "price": "Price",
       "discount": "Discount",
       "total": "Total",

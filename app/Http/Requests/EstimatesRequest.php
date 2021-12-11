@@ -79,6 +79,15 @@ class EstimatesRequest extends FormRequest
             'items.*.quantity' => [
                 'required',
             ],
+            'items.*.width' => [
+                'required',
+            ],
+            'items.*.length' => [
+                'required',
+            ],
+            'items.*.area' => [
+                'required',
+            ],
             'items.*.price' => [
                 'required',
             ],
