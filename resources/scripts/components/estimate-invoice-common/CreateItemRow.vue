@@ -1,9 +1,9 @@
 <template>
   <tr class="box-border bg-white border border-gray-200 border-solid rounded-b">
-    <td colspan="5" class="p-0 text-left align-top">
+    <td colspan="8" class="p-0 text-left align-top">
       <table class="w-full">
         <colgroup>
-          <col style="width: 40%; min-width: 280px" />
+          <col style="width: 25%; min-width: 280px" />
           <col style="width: 10%; min-width: 120px" />
           <col style="width: 15%; min-width: 120px" />
           <col
@@ -48,6 +48,32 @@
             </td>
             <td class="px-5 py-4 text-right align-top">
               <BaseInput
+                v-model="width"
+                :invalid="v$.width.$error"
+                :content-loading="loading"
+                type="number"
+                small
+                min="0"
+                step="any"
+                @change="syncItemToStore()"
+                @input="v$.width.$touch()"
+              />
+            </td>
+            <td class="px-5 py-4 text-right align-top">
+              <BaseInput
+                v-model="length"
+                :invalid="v$.length.$error"
+                :content-loading="loading"
+                type="number"
+                small
+                min="0"
+                step="any"
+                @change="syncItemToStore()"
+                @input="v$.length.$touch()"
+              />
+            </td>
+            <td class="px-5 py-4 text-right align-top">
+              <BaseInput
                 v-model="quantity"
                 :invalid="v$.quantity.$error"
                 :content-loading="loading"
@@ -59,10 +85,11 @@
                 @input="v$.quantity.$touch()"
               />
             </td>
+
             <td class="px-5 py-4 text-left align-top">
               <div class="flex flex-col">
                 <div class="flex-auto flex-fill bd-highlight">
-                  <div class="relative w-full">
+                  <div style="min-width: 150px"  class="relative w-full">
                     <BaseMoney
                       :key="selectedCurrency"
                       v-model="price"
@@ -126,7 +153,7 @@
               </div>
             </td>
             <td class="px-5 py-4 text-right align-top">
-              <div class="flex items-center justify-end text-sm">
+              <div style="min-width: 200px" class="flex items-center justify-end text-sm">
                 <span>
                   <BaseContentPlaceholders v-if="loading">
                     <BaseContentPlaceholdersText :lines="1" class="w-16 h-5" />
@@ -262,6 +289,26 @@ const quantity = computed({
   },
 })
 
+const width = computed({
+  get: () => {
+    return props.itemData.width
+  },
+  set: (newValue) => {
+    updateItemAttribute('width', parseFloat(newValue))
+  },
+})
+
+const length = computed({
+  get: () => {
+    return props.itemData.length
+  },
+  set: (newValue) => {
+    updateItemAttribute('length', parseFloat(newValue))
+  },
+})
+
+
+
 const price = computed({
   get: () => {
     const price = props.itemData.price
@@ -284,7 +331,7 @@ const price = computed({
   },
 })
 
-const subtotal = computed(() => props.itemData.price * props.itemData.quantity)
+const subtotal = computed(() => props.itemData.price * props.itemData.quantity * props.itemData.width * props.itemData.length)
 
 const discount = computed({
   get: () => {
@@ -359,6 +406,29 @@ const rules = {
       maxLength(20)
     ),
   },
+  width: {
+    required: helpers.withMessage(t('validation.required'), required),
+    minValue: helpers.withMessage(
+      t('validation.qty_must_greater_than_zero'),
+      minValue(0)
+    ),
+    maxLength: helpers.withMessage(
+      t('validation.amount_maxlength'),
+      maxLength(20)
+    ),
+  },
+  length: {
+    required: helpers.withMessage(t('validation.required'), required),
+    minValue: helpers.withMessage(
+      t('validation.qty_must_greater_than_zero'),
+      minValue(0)
+    ),
+    maxLength: helpers.withMessage(
+      t('validation.amount_maxlength'),
+      maxLength(20)
+    ),
+  },
+
   price: {
     required: helpers.withMessage(t('validation.required'), required),
     minValue: helpers.withMessage(

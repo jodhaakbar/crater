@@ -16,7 +16,6 @@ class AddWidthLengthIntoInvoiceItemsTable extends Migration
         Schema::table('invoice_items', function (Blueprint $table) {
             $table->decimal('width', 15, 2);
             $table->decimal('length', 15, 2);
-            $table->decimal('area', 15, 2);
         });
     }
 
@@ -31,7 +30,6 @@ class AddWidthLengthIntoInvoiceItemsTable extends Migration
             $table->dropColumn([
                 'width',
                 'length',
-                'area',
             ]);
         });
     }

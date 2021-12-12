@@ -11,6 +11,7 @@
         src="/img/logo-white.png"
         alt="Crater Logo"
         class="h-6"
+        style="height:45px"
       />
     </router-link>
 

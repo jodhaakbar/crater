@@ -82,9 +82,6 @@ class InvoicesRequest extends FormRequest
             'items.*.length' => [
                 'required',
             ],
-            'items.*.area' => [
-                'required',
-            ],
             'items.*.price' => [
                 'required',
             ],
