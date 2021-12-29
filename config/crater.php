@@ -53,6 +53,7 @@ return [
         ["code" => "fr", "name" => "French"],
         ["code" => "de", "name" => "German"],
         ["code" => "ja", "name" => "Japanese"],
+        ["code" => "id", "name" => "Bahasa"],
         ["code" => "it", "name" => "Italian"],
         ["code" => "lv", "name" => "Latvian"],
         ["code" => "pl", "name" => "Polish"],
@@ -101,6 +102,15 @@ return [
         ['key' => 'settings.preferences.disable_on_invoice_paid', 'value' => 'disable_on_invoice_paid'],
         ['key' => 'settings.preferences.disable_on_invoice_sent', 'value' => 'disable_on_invoice_sent'],
     ],
+
+    /*
+    * List of default status
+    */
+    'defaultstatus_edits' => [
+        ['key' => 'settings.preferences.draft', 'value' => 'draft'],
+        ['key' => 'settings.preferences.sent', 'value' => 'sent'],
+    ],
+
 
     /*
     * List of setting menu

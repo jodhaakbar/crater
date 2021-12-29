@@ -7,6 +7,7 @@ import ja from './ja.json'
 import pl from './pl.json'
 import pt_BR from './pt-br.json'
 import it from './it.json'
+import id from './id.json'
 import sr from './sr.json'
 import nl from './nl.json'
 import ko from './ko.json'
@@ -23,6 +24,7 @@ export default {
   de,
   ja,
   pt_BR,
+  id,
   it,
   sr,
   nl,

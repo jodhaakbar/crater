@@ -233,6 +233,7 @@ class Company extends Model implements HasMedia
             'payment_email_attachment' => 'NO',
             'save_pdf_to_disk' => 'NO',
             'retrospective_edits' => 'allow',
+            'defaultstatus_edits' => 'draft',
             'invoice_number_format' => '{{SERIES:INV}}{{DELIMITER:-}}{{SEQUENCE:6}}',
             'estimate_number_format' => '{{SERIES:EST}}{{DELIMITER:-}}{{SEQUENCE:6}}',
             'payment_number_format' => '{{SERIES:PAY}}{{DELIMITER:-}}{{SEQUENCE:6}}',

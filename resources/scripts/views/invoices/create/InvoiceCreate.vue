@@ -107,11 +107,11 @@
             />
 
             <!-- Invoice Template Button-->
-            <SelectTemplate
+            <!-- <SelectTemplate
               :store="invoiceStore"
               store-prop="newInvoice"
               component-name="InvoiceTemplate"
-            />
+            /> -->
           </div>
 
           <InvoiceTotal

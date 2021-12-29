@@ -11,6 +11,10 @@
 
   <BaseDivider class="my-8" />
 
+  <InvoicesTabDefaultStatus />
+
+  <BaseDivider class="my-8" />
+
   <InvoicesTabDefaultFormats />
 
   <BaseDivider class="mt-6 mb-2" />
@@ -33,6 +37,7 @@ import { computed, reactive, inject } from 'vue'
 import { useCompanyStore } from '@/scripts/stores/company'
 import InvoicesTabInvoiceNumber from './InvoicesTabInvoiceNumber.vue'
 import InvoicesTabRetrospective from './InvoicesTabRetrospective.vue'
+import InvoicesTabDefaultStatus from './InvoicesTabDefaultStatus.vue'
 import InvoicesTabDueDate from './InvoicesTabDueDate.vue'
 import InvoicesTabDefaultFormats from './InvoicesTabDefaultFormats.vue'
 
